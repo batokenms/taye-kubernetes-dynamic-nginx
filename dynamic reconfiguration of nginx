@@ -1,0 +1,14 @@
+# Dynamic Reconfiguration of NGINX using a ConfigMap
+  
+To achieve dynamic reconfiguration of NGINX using a ConfigMap and ensure it automatically reflects changes, 
+you will need to create a service account and define appropriate ClusterRoles and ClusterRoleBindings to give the NGINX pod permission to watch, list, and get ConfigMaps.
+
+# Secret 
+A service account in Kubernetes provides an identity for pods to authenticate when interacting with other Kubernetes resources and the Kubernetes API server. 
+It defines the permissions (through roles or role bindings) that a pod or workload can use to perform specific actions, such as reading secrets, creating deployments, or accessing services.
+Key Points for Accuracy:
+Identity for Pods: Each pod can be assigned a service account, which provides it with credentials to authenticate with the Kubernetes API.
+Access Control via RBAC: Permissions for service accounts are managed using Roles or ClusterRoles along with RoleBindings or ClusterRoleBindings.
+API Authentication: Without a service account or with restricted permissions, a pod will be limited in what it can do or access in the cluster.
+Namespace Scope: Service accounts are scoped to a namespace, meaning they only apply within that namespace unless using a cluster-wide role.
+Thus, service accounts ensure fine-grained access control and security by managing how workloads access and interact with other resources.
