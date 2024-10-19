@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: nginx
+  labels:
+    environment: production         # List all namespaces with their label 
+                                    # kubectl get namespaces --show-labels              
+                                    # Filter namespaces by label
+                                    # kubectl get namespaces -l environment=production
+
+# Adding a label help you to effectively and efficeinetly manage and organize resources within the cluster
+# Adding a label makes it easier to distinguish between different types of workloads (e.g., staging vs. production).
+# Labels on namespaces are optional but highly recommended if your cluster:
+# Hosts multiple environments (dev, staging, prod).
+# Runs several applications managed by different teams.
