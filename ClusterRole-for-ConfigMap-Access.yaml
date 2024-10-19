@@ -1,0 +1,12 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: nginx-configmap-role
+rules:
+  - apiGroups: [""]
+    resources: ["configmaps"]
+    verbs: ["get", "list", "watch"]
+# Verbs: get, list, and watch
+# These actions allow reading data from ConfigMaps but do not allow write or modify operations.
+# Not Elevated: These permissions are read-only, limited to the scope of ConfigMaps.
+# No Privilege Escalation: The ClusterRole does not grant the pod the ability to create, delete, or modify ConfigMaps or other resources (such as pods or secrets).
