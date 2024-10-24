@@ -7,6 +7,7 @@ roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
   name: nginx-configmap-role
+  namespace: nginx
 subjects:
   - kind: ServiceAccount
     name: nginx-sa
