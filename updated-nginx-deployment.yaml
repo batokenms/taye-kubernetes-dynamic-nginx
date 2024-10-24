@@ -18,7 +18,7 @@ spec:
       serviceAccountName: nginx-sa
       containers:
       - name: nginx
-        image: your-registry/nginx-dynamic:latest  # Use your custom image
+        image: jeanp12/nginx-content:latest  # Use your custom image
         ports:
         - containerPort: 80
         volumeMounts:
